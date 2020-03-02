@@ -11,13 +11,14 @@ export default function Search (props) {
                 type="text"
                 placeholder="Search"
                 onKeyUp={event => onKeyUp(event.target.value)}
+                data-testid="searchID"
             />
             {results.length > 0 &&
                 <div className="InputBox">
                     <ul>
                         {results.map(value =>
                             <ol
-                                key={value.url}
+                                key={value.name}
                                 className="InputBox-Cursor"
                                 onClick={() => onClick(value)}
                             >

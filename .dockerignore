@@ -1,0 +1,10 @@
+.git
+.data
+.vscode
+.editorconfig
+.gitignore
+bin
+README.md
+Dockerfile
+scripts
+node_modules
