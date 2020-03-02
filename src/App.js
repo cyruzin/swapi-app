@@ -100,11 +100,10 @@ function App () {
       {loading && <div className="Container-Loading"><p>Loading...</p></div>}
       <div>
         <a href={urlHandler()}>
-          <img alt="joker"
-            className="poster"
+          <img 
+            alt="joker"
+            className="Container-Img"
             src={Logo}
-            width="500"
-            height="500"
           />
         </a>
 

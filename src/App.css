@@ -1,8 +1,17 @@
 .Container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(min-content, 500px));
-  column-gap: 25px;
-  height: 100vh;
+  min-height: 100vh;
+  justify-content: center;
+}
+
+.Container-Img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  width: 370px;
+  height: 400px;
 }
 
 .Container > div {
