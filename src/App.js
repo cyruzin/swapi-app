@@ -1,4 +1,4 @@
-import React, { useState, useCallback, useEffect, Suspense } from 'react'
+import React, { useState, useCallback, useEffect } from 'react'
 import debounce from 'lodash/debounce';
 import { swapiFetch, fetchImage } from './util/request'
 import { SEARCH_KEY, SEARCH_ID, BASE_URL } from './util/constants'
