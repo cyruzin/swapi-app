@@ -1,0 +1,1 @@
+export const SWAPI_URL = process.env.REACT_APP_SWAPI_URL

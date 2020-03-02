@@ -1,0 +1,22 @@
+.InfoBox {
+   padding: 5px;
+   margin-top: 20px;
+   font-weight: 200;
+   font-size: larger;
+}
+
+.Info-Starships {
+    font-size: small;
+    font-weight: 300;
+    color: #FFFF99;
+    padding-bottom: 15px
+}
+
+.Info-Starships ol {
+ padding-bottom: 8px;
+}
+
+p {
+    color: #FFF;
+    padding-bottom: 10px;
+}
