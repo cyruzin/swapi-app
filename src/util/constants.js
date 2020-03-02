@@ -1,3 +1,4 @@
+export const BASE_URL = process.env.REACT_APP_BASE_URL
 export const SWAPI_URL = process.env.REACT_APP_SWAPI_URL
 export const IMAGE_URL = process.env.REACT_APP_IMAGE_URL
 export const SEARCH_KEY = process.env.REACT_APP_SEARCH_KEY

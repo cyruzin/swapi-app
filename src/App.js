@@ -1,8 +1,7 @@
-import React, { useState, useCallback, useEffect } from 'react'
+import React, { useState, useCallback, useEffect, Suspense } from 'react'
 import debounce from 'lodash/debounce';
 import { swapiFetch, fetchImage } from './util/request'
-import { urlHandler } from './util/helpers'
-import { SEARCH_KEY, SEARCH_ID } from './util/constants'
+import { SEARCH_KEY, SEARCH_ID, BASE_URL } from './util/constants'
 import Search from './components/Search'
 import List from './components/List'
 import Logo from './assets/img/logo.png'
@@ -35,9 +34,9 @@ function App () {
         url: '/people/'
       })
       setList(response.results)
-      setLoading(false)
     } catch (error) {
       setError(error)
+    } finally {
       setLoading(false)
     }
   }, [])
@@ -58,9 +57,9 @@ function App () {
         url: `/people/?search=${encodeURIComponent(searchTerm)}`,
       })
       setSearch(response.results)
-      setLoading(false)
     } catch (err) {
       setError(err)
+    } finally {
       setLoading(false)
     }
   }, 500)
@@ -87,9 +86,9 @@ function App () {
       }
       setInfo(payload)
       setSearch('')
-      setLoading(false)
     } catch (err) {
       setError(err)
+    } finally {
       setLoading(false)
     }
   }, [swapiImage])
@@ -99,8 +98,8 @@ function App () {
       {error && <div className="Container-Error"><p>{error}</p></div>}
       {loading && <div className="Container-Loading"><p>Loading...</p></div>}
       <div>
-        <a href={urlHandler()}>
-          <img 
+        <a href={BASE_URL}>
+          <img
             alt="joker"
             className="Container-Img"
             src={Logo}
@@ -127,7 +126,6 @@ function App () {
           results={search}
           info={info}
         />
-
         {!info && <List info={list} onClick={swapiInfo} />}
       </div>
     </div >

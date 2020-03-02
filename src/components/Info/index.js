@@ -1,5 +1,5 @@
 import React from 'react'
-import { urlHandler } from '../../util/helpers'
+import { BASE_URL } from '../../util/constants'
 import './style.css';
 
 export default function Info (props) {
@@ -21,7 +21,7 @@ export default function Info (props) {
 
     return (
         <div className="InfoBox">
-            <div className="Info-Link"><a href={urlHandler()}>&#8592;</a></div>
+            <div className="Info-Link"><a href={BASE_URL}>&#8592;</a></div>
 
             <div className="Info-Img"><img alt={name} src={image} /></div>
 
