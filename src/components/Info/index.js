@@ -28,7 +28,7 @@ export default function Info (props) {
             <p>Height: {height}</p>
             <p>Mass: {mass}</p>
             {starships.length > 0
-                && <div><p>Starships:</p>
+                ? <div><p>Starships:</p>
                     {starships.map(value => {
                         return (
                             <ul className="Info-Starships" key={value.name}>
@@ -41,7 +41,7 @@ export default function Info (props) {
                                 <ol>Consumables: {value.consumables}</ol>
                                 <ol>Crew: {value.crew}</ol>
                                 <ol>Passengers: {value.passengers}</ol>
-                                <ol>Hyolerdrive rating: {value.hyolerdrive_rating}</ol>
+                                <ol>Hyperdrive rating: {value.hyperdrive_rating}</ol>
                                 <ol>MGLT: {value.MGLT}</ol>
                                 <ol>Cargo capacity: {value.cargo_capacity}</ol>
                                 <ol>Cost in credits: {value.cost_in_credits}</ol>
@@ -49,7 +49,7 @@ export default function Info (props) {
                         )
                     })
                     }
-                </div>}
+                </div> : <p>Starships: n/a</p>}
         </div >
     )
 }
