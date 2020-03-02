@@ -1,7 +1,7 @@
 .Container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(min-content, 500px));
-  column-gap: 50px;
+  column-gap: 25px;
   height: 100vh;
 }
 

@@ -2,6 +2,7 @@ import React, { useState, useCallback, useEffect } from 'react'
 import debounce from 'lodash/debounce';
 import { swapiFetch } from './util/request'
 import Search from './components/Search'
+import List from './components/List'
 import Logo from './assets/img/logo.png'
 import './App.css'
 
@@ -64,18 +65,18 @@ function App () {
     setSearch('')
   }, [])
 
-  console.log(list)
-
   return (
     <div className="Container">
       {error && <div className="Container-Error"><p>{error}</p></div>}
       <div>
-        <img alt="joker"
-          className="poster"
-          src={Logo}
-          width="500"
-          height="500"
-        />
+        <a href="/">
+          <img alt="joker"
+            className="poster"
+            src={Logo}
+            width="500"
+            height="500"
+          />
+        </a>
 
         <p className="Container-Info">By Cyro Dubeux</p>
         <p className="Container-Info">
@@ -90,16 +91,17 @@ function App () {
         </p>
       </div>
 
-      <Search
-        onKeyUp={swapiSearch}
-        onClick={swapiInfo}
-        results={search}
-        info={info}
-      />
+      <div>
+        <Search
+          onKeyUp={swapiSearch}
+          onClick={swapiInfo}
+          results={search}
+          info={info}
+        />
 
-      {/* {list.length > 0 && list.map(value => <ul key={value.name}><ol>{value.name}</ol></ul>)} */}
-
-    </div>
+        {!info && <List info={list} onClick={swapiInfo} />}
+      </div>
+    </div >
   );
 }
 

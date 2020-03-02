@@ -1,0 +1,24 @@
+.ListBox {
+   display: grid;
+   grid-template-columns: auto auto;
+   margin-top: 20px;
+   column-gap: 30px;
+   font-weight: 200;
+   font-size: larger;
+}
+
+.ListBox div {
+ padding-bottom: 30px;
+}
+
+.ListBox-Link {
+    font-weight: 400;
+    text-decoration: none;
+    color: #FFFF99;
+    cursor: pointer;
+}
+
+p {
+    color: #FFF;
+    padding-bottom: 10px;
+}

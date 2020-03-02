@@ -5,7 +5,7 @@ import './style.css'
 export default function Search (props) {
     const { onKeyUp, onClick, results, info } = props
     return (
-        <div>
+        <>
             <input
                 className="Input"
                 type="text"
@@ -27,6 +27,6 @@ export default function Search (props) {
                     </ul>
                 </div>}
             <Info info={info} />
-        </div>
+        </>
     )
 }
