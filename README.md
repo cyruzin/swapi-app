@@ -1,5 +1,7 @@
 # SWAPI App
 
+[![Build](https://github.com/cyruzin/swapi-app/workflows/Build/badge.svg)](https://github.com/cyruzin/swapi-app/actions?query=workflow%3ABuild+branch%3Amaster) [![GitHub license](https://img.shields.io/github/license/Naereen/StrapDown.js.svg)](https://github.com/Naereen/StrapDown.js/blob/master/LICENSE)
+
 From a Star Wars fan to Star Wars fans, I present you the SWAPI App.
 
 Check the [demo](https://cyruzin.github.io/swapi-app/) up and running!
