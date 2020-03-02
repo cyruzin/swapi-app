@@ -69,7 +69,7 @@ function App () {
     <div className="Container">
       {error && <div className="Container-Error"><p>{error}</p></div>}
       <div>
-        <a href="/">
+        <a href={process.env.NODE_ENV === 'development' ? '/' : '/swapi-app/'}>
           <img alt="joker"
             className="poster"
             src={Logo}
