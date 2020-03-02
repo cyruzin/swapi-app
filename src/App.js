@@ -1,28 +1,44 @@
 import React, { useState, useCallback, useEffect } from 'react'
 import debounce from 'lodash/debounce';
-import { swapiFetch } from './util/request'
+import { swapiFetch, fetchImage } from './util/request'
+import { urlHandler } from './util/helpers'
+import { SEARCH_KEY, SEARCH_ID } from './util/constants'
 import Search from './components/Search'
 import List from './components/List'
 import Logo from './assets/img/logo.png'
 import './App.css'
 
 function App () {
+  const [loading, setLoading] = useState(false)
   const [list, setList] = useState([])
   const [search, setSearch] = useState([])
   const [info, setInfo] = useState(null)
   const [error, setError] = useState(null)
 
+  const swapiImage = useCallback(async (searchTerm) => {
+    try {
+      return await fetchImage({
+        url: `?key=${SEARCH_KEY}&cx=${SEARCH_ID}&searchType=image&num=5&q=${searchTerm}`
+      })
+    } catch (err) {
+      setError(err)
+    }
+  }, [])
+
   const swapiList = useCallback(async () => {
     try {
       setInfo('')
       setError('')
+      setLoading(true)
       const response = await swapiFetch({
         method: 'GET',
         url: '/people/'
       })
       setList(response.results)
+      setLoading(false)
     } catch (error) {
       setError(error)
+      setLoading(false)
     }
   }, [])
 
@@ -35,41 +51,55 @@ function App () {
       setSearch('')
       setInfo('')
       setError('')
+      setLoading(true)
       if (searchTerm === '') return
       const response = await swapiFetch({
         method: 'GET',
         url: `/people/?search=${encodeURIComponent(searchTerm)}`,
       })
       setSearch(response.results)
+      setLoading(false)
     } catch (err) {
       setError(err)
+      setLoading(false)
     }
   }, 500)
 
   const swapiInfo = useCallback(async value => {
-    let starships = [];
-    if (value.starships.length > 0) {
-      starships = await Promise.all(
-        value.starships.map(async value => await swapiFetch({
-          method: 'GET',
-          url: value
-        }))
-      )
-    }
+    try {
+      setLoading(true)
+      let starships = [];
+      if (value.starships.length > 0) {
+        starships = await Promise.all(
+          value.starships.map(async value => await swapiFetch({
+            method: 'GET',
+            url: value
+          }))
+        )
+      }
 
-    const payload = {
-      ...value,
-      starships
+      const response = await swapiImage(value.name)
+      const image = response.items[0].link
+      const payload = {
+        ...value,
+        starships,
+        image
+      }
+      setInfo(payload)
+      setSearch('')
+      setLoading(false)
+    } catch (err) {
+      setError(err)
+      setLoading(false)
     }
-    setInfo(payload)
-    setSearch('')
-  }, [])
+  }, [swapiImage])
 
   return (
     <div className="Container">
       {error && <div className="Container-Error"><p>{error}</p></div>}
+      {loading && <div className="Container-Loading"><p>Loading...</p></div>}
       <div>
-        <a href={process.env.NODE_ENV === 'development' ? '/' : '/swapi-app/'}>
+        <a href={urlHandler()}>
           <img alt="joker"
             className="poster"
             src={Logo}

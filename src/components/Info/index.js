@@ -1,4 +1,5 @@
 import React from 'react'
+import { urlHandler } from '../../util/helpers'
 import './style.css';
 
 export default function Info (props) {
@@ -14,11 +15,16 @@ export default function Info (props) {
         eye_color,
         height,
         mass,
-        starships
+        starships,
+        image
     } = info
 
     return (
         <div className="InfoBox">
+            <div className="Info-Link"><a href={urlHandler()}>&#8592;</a></div>
+
+            <div className="Info-Img"><img alt={name} src={image} /></div>
+
             <p>Name: {name}</p>
             <p>Gender: {gender}</p>
             <p>Birth year: {birth_year}</p>

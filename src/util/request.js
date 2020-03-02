@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { SWAPI_URL } from './constants'
+import { SWAPI_URL, IMAGE_URL } from './constants'
 
 // Default error messages for failing requests.
 const errorMessages = {
@@ -43,7 +43,12 @@ export async function swapiFetch ({ url, method, data, params }) {
     }
 }
 
-export async function fetch ({
+const image = axios.create({
+    baseURL: IMAGE_URL,
+    method: 'GET'
+})
+
+export async function fetchImage ({
     url,
     method,
     headers,
@@ -51,7 +56,7 @@ export async function fetch ({
     params
 }) {
     try {
-        const response = await axios({
+        const response = await image({
             url,
             headers,
             method,

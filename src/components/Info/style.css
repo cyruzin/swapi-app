@@ -1,8 +1,8 @@
 .InfoBox {
-   padding: 5px;
-   margin-top: 20px;
-   font-weight: 200;
-   font-size: larger;
+    padding: 5px;
+    margin-top: 20px;
+    font-weight: 200;
+    font-size: larger;
 }
 
 .Info-Starships {
@@ -12,11 +12,31 @@
     padding-bottom: 15px
 }
 
+.Info-Link {
+    padding-bottom: 20px;
+}
+
+.Info-Img {
+    padding-bottom: 20px;
+}
+
+.Info-Img img {
+    border: 1px solid #FFFF99;
+    width: 350px;
+    height: 200px;
+}
+
+.Info-Link a {
+    font-size: x-large;
+    text-decoration: none;
+    color: #FFFF99;
+}
+
 .Info-Starships ol {
- padding-bottom: 8px;
+   padding-bottom: 8px;
 }
 
 p {
-    color: #FFF;
-    padding-bottom: 10px;
+   color: #FFF;
+   padding-bottom: 10px;
 }

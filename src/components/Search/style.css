@@ -24,6 +24,7 @@
    opacity: 0.9;
    font-weight: bold;
    font-size: small;
+   z-index: 9999;
 }
 
 .InputBox ul ol:hover {

@@ -1,7 +1,7 @@
 .ListBox {
    display: grid;
    grid-template-columns: auto auto;
-   margin-top: 20px;
+   margin-top: 40px;
    column-gap: 30px;
    font-weight: 200;
    font-size: larger;
