@@ -42,6 +42,16 @@ To test the app, run:
 yarn test
 ```
 
+## Technologies
+
+This app was built with create-react-app and the following technologies:
+
+- Node v12.16.1
+- React v0.19.2
+- Lodash v4.17.15
+- Testing Library/React v9.3.2
+- Vanilla CSS
+
 ## License
 
 MIT
