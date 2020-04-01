@@ -1,7 +1,7 @@
 import React, { useState, useCallback, useEffect } from 'react'
 import debounce from 'lodash/debounce';
-import { swapiFetch, fetchImage } from './util/request'
-import { SEARCH_KEY, SEARCH_ID, BASE_URL } from './util/constants'
+import { swapiFetch } from './util/request'
+import { BASE_URL } from './util/constants'
 import Search from './components/Search'
 import List from './components/List'
 import Logo from './assets/img/logo.png'
@@ -14,15 +14,15 @@ function App () {
   const [info, setInfo] = useState(null)
   const [error, setError] = useState(null)
 
-  const swapiImage = useCallback(async (searchTerm) => {
-    try {
-      return await fetchImage({
-        url: `?key=${SEARCH_KEY}&cx=${SEARCH_ID}&searchType=image&num=5&q=${searchTerm}`
-      })
-    } catch (err) {
-      setError(err)
-    }
-  }, [])
+  // const swapiImage = useCallback(async (searchTerm) => {
+  //   try {
+  //     return await fetchImage({
+  //       url: `?key=${SEARCH_KEY}&cx=${SEARCH_ID}&searchType=image&num=5&q=${searchTerm}`
+  //     })
+  //   } catch (err) {
+  //     setError(err)
+  //   }
+  // }, [])
 
   const swapiList = useCallback(async () => {
     try {
@@ -77,12 +77,9 @@ function App () {
         )
       }
 
-      const response = await swapiImage(value.name)
-      const image = response.items[0].link
       const payload = {
         ...value,
-        starships,
-        image
+        starships
       }
       setInfo(payload)
       setSearch('')
@@ -91,7 +88,7 @@ function App () {
     } finally {
       setLoading(false)
     }
-  }, [swapiImage])
+  }, [])
 
   return (
     <div className="Container">

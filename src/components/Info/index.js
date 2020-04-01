@@ -15,15 +15,12 @@ export default function Info (props) {
         eye_color,
         height,
         mass,
-        starships,
-        image
+        starships
     } = info
 
     return (
         <div className="InfoBox">
             <div className="Info-Link"><a href={BASE_URL}>&#8592;</a></div>
-
-            <div className="Info-Img"><img alt={name} src={image} /></div>
 
             <p>Name: {name}</p>
             <p>Gender: {gender}</p>
