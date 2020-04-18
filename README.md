@@ -6,6 +6,10 @@ From a Star Wars fan to Star Wars fans, I present you the SWAPI App.
 
 Check the [demo](https://cyruzin.github.io/swapi-app/) up and running!
 
+## Status
+
+The API has been shut down :(.
+
 ## Install
 
 Run the command below to install the dependencies:
