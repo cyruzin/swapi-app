@@ -67,21 +67,7 @@ function App () {
   const swapiInfo = useCallback(async value => {
     try {
       setLoading(true)
-      let starships = [];
-      if (value.starships.length > 0) {
-        starships = await Promise.all(
-          value.starships.map(async value => await swapiFetch({
-            method: 'GET',
-            url: value
-          }))
-        )
-      }
-
-      const payload = {
-        ...value,
-        starships
-      }
-      setInfo(payload)
+      setInfo(value)
       setSearch('')
     } catch (err) {
       setError(err)

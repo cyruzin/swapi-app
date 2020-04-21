@@ -1,9 +1,12 @@
 import React from 'react'
+
 import Info from '../Info'
+
 import './style.css'
 
 export default function Search (props) {
     const { onKeyUp, onClick, results, info } = props
+
     return (
         <>
             <input

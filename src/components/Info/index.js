@@ -1,5 +1,7 @@
 import React from 'react'
+
 import { BASE_URL } from '../../util/constants'
+
 import './style.css';
 
 export default function Info (props) {
@@ -14,8 +16,7 @@ export default function Info (props) {
         hair_color,
         eye_color,
         height,
-        mass,
-        starships
+        mass
     } = info
 
     return (
@@ -30,29 +31,6 @@ export default function Info (props) {
             <p>Eye color: {eye_color}</p>
             <p>Height: {height}</p>
             <p>Mass: {mass}</p>
-            {starships.length > 0
-                ? <div><p>Starships:</p>
-                    {starships.map(value => {
-                        return (
-                            <ul className="Info-Starships" key={value.name}>
-                                <ol>Name: {value.name}</ol>
-                                <ol>Model: {value.model}</ol>
-                                <ol>Starship class: {value.starship_class}</ol>
-                                <ol>Manufacturer: {value.manufacturer}</ol>
-                                <ol>Length: {value.length}</ol>
-                                <ol>Max atmosphering speed: {value.max_atmosphering_speed}</ol>
-                                <ol>Consumables: {value.consumables}</ol>
-                                <ol>Crew: {value.crew}</ol>
-                                <ol>Passengers: {value.passengers}</ol>
-                                <ol>Hyperdrive rating: {value.hyperdrive_rating}</ol>
-                                <ol>MGLT: {value.MGLT}</ol>
-                                <ol>Cargo capacity: {value.cargo_capacity}</ol>
-                                <ol>Cost in credits: {value.cost_in_credits}</ol>
-                            </ul>
-                        )
-                    })
-                    }
-                </div> : <p>Starships: n/a</p>}
-        </div >
+        </div>
     )
 }
