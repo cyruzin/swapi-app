@@ -6,10 +6,6 @@ From a Star Wars fan to Star Wars fans, I present you the SWAPI App.
 
 Check the [demo](https://cyruzin.github.io/swapi-app/) up and running!
 
-## Status
-
-The API has been shut down :(.
-
 ## Install
 
 Run the command below to install the dependencies:
@@ -18,7 +14,7 @@ Run the command below to install the dependencies:
 yarn install
 ```
 
-## Run 
+## Run
 
 ### Locally
 
@@ -35,7 +31,7 @@ Make sure that you have Docker and Docker Composer installed.
 To start the app with Docker, run:
 
 ```sh
-docker-compose up 
+docker-compose up
 ```
 
 ## Tests
@@ -48,9 +44,9 @@ yarn test
 
 ## Technologies
 
-The back-end information is being pulled from the [SWAPI API](https://swapi.co/).
+The back-end information is being pulled from the [SWAPI API](https://swapi.dev/).
 
-The images are being pulled from Google's Custom Search API. 
+The images are being pulled from Google's Custom Search API.
 
 This app was built with create-react-app and the following technologies:
 
@@ -59,7 +55,6 @@ This app was built with create-react-app and the following technologies:
 - Lodash v4.17.15
 - Testing Library/React v9.3.2
 - Vanilla CSS
-
 
 ## License
 

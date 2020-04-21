@@ -1,10 +1,19 @@
-import React, { useState, useCallback, useEffect } from 'react'
+import React, {
+  useState,
+  useCallback,
+  useEffect
+} from 'react';
+
 import debounce from 'lodash/debounce';
+
 import { swapiFetch } from './util/request'
 import { BASE_URL } from './util/constants'
+
 import Search from './components/Search'
 import List from './components/List'
+
 import Logo from './assets/img/logo.png'
+
 import './App.css'
 
 function App () {
@@ -14,15 +23,6 @@ function App () {
   const [info, setInfo] = useState(null)
   const [error, setError] = useState(null)
 
-  // const swapiImage = useCallback(async (searchTerm) => {
-  //   try {
-  //     return await fetchImage({
-  //       url: `?key=${SEARCH_KEY}&cx=${SEARCH_ID}&searchType=image&num=5&q=${searchTerm}`
-  //     })
-  //   } catch (err) {
-  //     setError(err)
-  //   }
-  // }, [])
 
   const swapiList = useCallback(async () => {
     try {
