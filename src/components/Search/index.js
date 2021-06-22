@@ -1,11 +1,8 @@
 import React from 'react'
-
-import Info from '../Info'
-
 import './style.css'
 
-export default function Search (props) {
-    const { onKeyUp, onClick, results, info } = props
+export default function Search(props) {
+    const { onKeyUp, onClick, results } = props
 
     return (
         <>
@@ -30,7 +27,6 @@ export default function Search (props) {
                         )}
                     </ul>
                 </div>}
-            <Info info={info} />
         </>
     )
 }

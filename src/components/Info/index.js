@@ -1,10 +1,8 @@
 import React from 'react'
-
 import { BASE_URL } from '../../util/constants'
-
 import './style.css';
 
-export default function Info (props) {
+export default function Info(props) {
     if (!props.info) return null
 
     const { info } = props
