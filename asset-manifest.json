@@ -1,23 +1,21 @@
 {
   "files": {
-    "main.css": "/swapi-app/static/css/main.a0e1d639.chunk.css",
-    "main.js": "/swapi-app/static/js/main.f7dc74e7.chunk.js",
-    "main.js.map": "/swapi-app/static/js/main.f7dc74e7.chunk.js.map",
-    "runtime-main.js": "/swapi-app/static/js/runtime-main.d9161730.js",
-    "runtime-main.js.map": "/swapi-app/static/js/runtime-main.d9161730.js.map",
-    "static/js/2.16a40ba4.chunk.js": "/swapi-app/static/js/2.16a40ba4.chunk.js",
-    "static/js/2.16a40ba4.chunk.js.map": "/swapi-app/static/js/2.16a40ba4.chunk.js.map",
-    "index.html": "/swapi-app/index.html",
-    "precache-manifest.4584c093fff0992e68571f5e4ac0f204.js": "/swapi-app/precache-manifest.4584c093fff0992e68571f5e4ac0f204.js",
-    "service-worker.js": "/swapi-app/service-worker.js",
-    "static/css/main.a0e1d639.chunk.css.map": "/swapi-app/static/css/main.a0e1d639.chunk.css.map",
-    "static/js/2.16a40ba4.chunk.js.LICENSE.txt": "/swapi-app/static/js/2.16a40ba4.chunk.js.LICENSE.txt",
-    "static/media/logo.png": "/swapi-app/static/media/logo.b0247cc1.png"
+    "main.css": "./static/css/main.0fe5422e.chunk.css",
+    "main.js": "./static/js/main.b12de972.chunk.js",
+    "main.js.map": "./static/js/main.b12de972.chunk.js.map",
+    "runtime-main.js": "./static/js/runtime-main.22acbf57.js",
+    "runtime-main.js.map": "./static/js/runtime-main.22acbf57.js.map",
+    "static/js/2.f1cf301c.chunk.js": "./static/js/2.f1cf301c.chunk.js",
+    "static/js/2.f1cf301c.chunk.js.map": "./static/js/2.f1cf301c.chunk.js.map",
+    "index.html": "./index.html",
+    "static/css/main.0fe5422e.chunk.css.map": "./static/css/main.0fe5422e.chunk.css.map",
+    "static/js/2.f1cf301c.chunk.js.LICENSE.txt": "./static/js/2.f1cf301c.chunk.js.LICENSE.txt",
+    "static/media/logo.c6be10cb.png": "./static/media/logo.c6be10cb.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.d9161730.js",
-    "static/js/2.16a40ba4.chunk.js",
-    "static/css/main.a0e1d639.chunk.css",
-    "static/js/main.f7dc74e7.chunk.js"
+    "static/js/runtime-main.22acbf57.js",
+    "static/js/2.f1cf301c.chunk.js",
+    "static/css/main.0fe5422e.chunk.css",
+    "static/js/main.b12de972.chunk.js"
   ]
 }
