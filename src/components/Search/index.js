@@ -1,18 +1,22 @@
 import React from 'react'
 import './style.css'
 
-export default function Search(props) {
-    const { onKeyUp, onClick, results } = props
+const Search = React.forwardRef((props, ref) => {
+    const { onKeyUp, onClick, onClear, results } = props
 
     return (
         <>
-            <input
-                className="Input"
-                type="text"
-                placeholder="Search"
-                onKeyUp={event => onKeyUp(event.target.value)}
-                data-testid="searchID"
-            />
+            <div className="InputBox-Wrapper">
+                <input
+                    className="Input"
+                    type="text"
+                    placeholder="Search"
+                    onKeyUp={event => onKeyUp(event.target.value)}
+                    data-testid="searchID"
+                    ref={ref}
+                />
+                <span className="InputBox-Clear" onClick={() => onClear()}>x</span>
+            </div>
             {results.length > 0 &&
                 <div className="InputBox">
                     <ul>
@@ -29,4 +33,6 @@ export default function Search(props) {
                 </div>}
         </>
     )
-}
+})
+
+export default Search

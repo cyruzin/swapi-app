@@ -1,14 +1,13 @@
 .ListBox {
    display: grid;
-   grid-template-columns: auto auto;
-   margin-top: 40px;
-   column-gap: 30px;
-   font-weight: 200;
-   font-size: larger;
+   grid-template-columns: 1fr 1fr;
+   margin-top: 50px;
+   column-gap: 70px;
+   font-size: 18px;
 }
 
 .ListBox div {
- padding-bottom: 30px;
+    padding-bottom: 30px;
 }
 
 .ListBox-Link {
@@ -16,6 +15,12 @@
     text-decoration: none;
     color: #FFFF99;
     cursor: pointer;
+}
+
+.ListBox-Link:hover {
+   font-weight: bold;
+   font-size: larger;
+   color: #FFF;
 }
 
 p {

@@ -1,8 +1,4 @@
-import React, {
-  useState,
-  useCallback,
-  useEffect
-} from 'react'
+import React from 'react'
 
 import useDebounce from './hooks/useDebounce'
 
@@ -18,14 +14,15 @@ import Logo from './assets/img/logo.png'
 import './App.css'
 
 function App() {
-  const [loading, setLoading] = useState(false)
-  const [list, setList] = useState([])
-  const [search, setSearch] = useState([])
-  const [info, setInfo] = useState(null)
-  const [error, setError] = useState(null)
+  const [loading, setLoading] = React.useState(false)
+  const [list, setList] = React.useState([])
+  const [search, setSearch] = React.useState([])
+  const [info, setInfo] = React.useState(null)
+  const [error, setError] = React.useState(null)
+  const searchRef = React.createRef(null)
   const SWAPI_LIST = 'SWAPI_LIST'
 
-  const swapiList = useCallback(async () => {
+  const swapiList = React.useCallback(async () => {
     try {
       setInfo('')
       setError('')
@@ -43,7 +40,7 @@ function App() {
     }
   }, [])
 
-  const listFromCache = useCallback(() => {
+  const listFromCache = React.useCallback(() => {
     try {
       setInfo('')
       setError('')
@@ -60,7 +57,7 @@ function App() {
     }
   }, [swapiList]);
 
-  useEffect(() => {
+  React.useEffect(() => {
     listFromCache()
   }, [listFromCache])
 
@@ -83,7 +80,7 @@ function App() {
     }
   }, 500)
 
-  const swapiInfo = useCallback(async value => {
+  const swapiInfo = React.useCallback(async value => {
     try {
       setLoading(true)
       setInfo(value)
@@ -94,6 +91,11 @@ function App() {
       setLoading(false)
     }
   }, [])
+
+  const onClear = () => {
+    searchRef.current.value = ''
+    setSearch([])
+  }
 
   return (
     <div className="Container">
@@ -108,11 +110,11 @@ function App() {
           />
         </a>
 
-        <p className="Container-Info">By Cyro Dubeux</p>
+        <p className="Container-Info Container-Info-Text">By Cyro Dubeux</p>
         <p className="Container-Info">
           <a
             className="Container-Link"
-            href="https://github.com/cyruzin"
+            href="https://github.com/cyruzin/swapi-app"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -125,7 +127,9 @@ function App() {
         <Search
           onKeyUp={swapiSearch}
           onClick={swapiInfo}
+          onClear={onClear}
           results={search}
+          ref={searchRef}
         />
         {!info && <List info={list} onClick={swapiInfo} />}
         {<Info info={info} />}

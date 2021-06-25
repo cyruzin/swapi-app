@@ -21,7 +21,10 @@
 .Container-Info {
   text-align: center;
   font-size: larger;
-  font-weight: 200;
+}
+
+.Container-Info-Text {
+  font-weight: 800;
 }
 
 .Container-Error {

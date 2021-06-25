@@ -15,24 +15,43 @@
    outline: none !important;
 }
 
+.InputBox-Wrapper {
+   position: relative;
+}
+
 .InputBox {
    background: #FFFF33;
    border-left: 2px solid #181818;
    border-bottom: 2px solid #181818;
    width: 100%;
-   padding: 5px;
+   padding: 8px;
    opacity: 0.9;
-   font-weight: bold;
-   font-size: small;
+   font-size: medium;
    z-index: 9999;
 }
 
 .InputBox ul ol:hover {
-    border-left: 2px solid #000;
-    padding: 7px;
+   border-left: 2px solid #000;
+   padding: 10px;
+   font-weight: bold;
+   font-size: larger;
  }
 
 .InputBox-Cursor {
   cursor: pointer;
   padding-bottom: 8px;
+}
+
+.InputBox-Clear {
+   position: absolute;
+   top: 15px;
+   right: 20px;
+   color: #FFF;
+   padding: 5px;
+   font-size: larger;
+   cursor: pointer;
+}
+
+.InputBox-Clear:hover {
+  font-weight: bolder;
 }
