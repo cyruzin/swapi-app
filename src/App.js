@@ -19,6 +19,7 @@ function App() {
   const [search, setSearch] = React.useState([])
   const [info, setInfo] = React.useState(null)
   const [error, setError] = React.useState(null)
+  const [showClearButton, setShowClearButton] = React.useState(false)
   const searchRef = React.createRef(null)
   const SWAPI_LIST = 'SWAPI_LIST'
 
@@ -73,6 +74,7 @@ function App() {
         url: `/people/?search=${encodeURIComponent(searchTerm)}`,
       })
       setSearch(response.results)
+      setShowClearButton(true)
     } catch (err) {
       setError(err)
     } finally {
@@ -95,6 +97,7 @@ function App() {
   const onClear = () => {
     searchRef.current.value = ''
     setSearch([])
+    setShowClearButton(false)
   }
 
   return (
@@ -129,6 +132,7 @@ function App() {
           onClick={swapiInfo}
           onClear={onClear}
           results={search}
+          showClearButton={showClearButton}
           ref={searchRef}
         />
         {!info && <List info={list} onClick={swapiInfo} />}

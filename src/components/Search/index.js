@@ -2,7 +2,7 @@ import React from 'react'
 import './style.css'
 
 const Search = React.forwardRef((props, ref) => {
-    const { onKeyUp, onClick, onClear, results } = props
+    const { onKeyUp, onClick, onClear, showClearButton, results } = props
 
     return (
         <>
@@ -15,7 +15,10 @@ const Search = React.forwardRef((props, ref) => {
                     data-testid="searchID"
                     ref={ref}
                 />
-                <span className="InputBox-Clear" onClick={() => onClear()}>x</span>
+                {showClearButton &&
+                    <span className="InputBox-Clear" onClick={() => onClear()}>
+                        x
+                    </span>}
             </div>
             {results.length > 0 &&
                 <div className="InputBox">
