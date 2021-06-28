@@ -44,8 +44,7 @@
   position: absolute;
   top: 0;
   right: 0;
-  background-color: #006200!important;
-  color: white;
+  background-color: #FFFF33!important;
   min-width: 350px;
   max-height: 60px;
   z-index: 10;
@@ -53,10 +52,15 @@
   font-weight: 200;
 }
 
+.Container-Loading > p {
+ color: black;
+ font-weight: 300;
+}
 
 .Container-Link {
   text-decoration: none;
   color: #FFFF99;
+  font-size: 17px;
 }
 
 /* Media Queries Section  */
@@ -64,7 +68,7 @@
 @media only screen and (max-width: 480px) { 
   .Container {
     display: flex;
-    flex-direction: column;;
+    flex-direction: column;
   }
 
   .Container-Img {

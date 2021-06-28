@@ -103,7 +103,9 @@ function App() {
   return (
     <div className="Container">
       {error && <div className="Container-Error"><p>{error}</p></div>}
-      {loading && <div className="Container-Loading"><p>Loading...</p></div>}
+      {loading && <div className="Container-Loading">
+        <p>Loading...</p>
+      </div>}
       <div>
         <a href={BASE_URL}>
           <img
